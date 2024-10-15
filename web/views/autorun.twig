@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include "comp/head.twig" %}
+	<body>
+		<main>
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title">{{page.title}}</div>
+				</div>
+				<div class="card-body">{{page.message}}
+                </div>
+			</div>
+		</main>
+        <script src="/js/script.js"></script>
+        <script>    
+        new FormScreen({{page|json_encode|raw}})
+        </script>
+	</body>
+</html>

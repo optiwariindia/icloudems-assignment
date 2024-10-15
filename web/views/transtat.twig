@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include "comp/head.twig" %}
+	<body>
+		<main>
+			<div class="card" style="min-width:360px">
+				<div class="card-header">
+					<div class="card-title">{{page.title}}</div>
+				</div>
+				<div class="card-body">
+				<ul class="nolist">
+				{% for key,entry in entries %}
+					<li>
+					{{key}}
+					<span>
+					{{entry}}
+					</span>
+					</li>
+				{% endfor %}
+				</ul>
+				<div class="flex-center">
+					{# <div class="loading"></div> Loading #}
+					<a nextbtn href="/seed/financial_trans?start={{page.start}}&end={{(page.start + page.limit)}}" class="btn btn-primary">Load 100</a>
+				</div>
+				</div>
+			</div>
+		</main>
+		 <script src="/js/script.js"></script>
+		 <script>
+		 
+		 setTimeout(() => {
+			const nxt=document.querySelector("[nextbtn]");
+			if(!nxt)return;
+			nxt.click();
+		 }, 1000);
+		 </script>
+		<script>
+		
+		</script>
+	</body>
+</html>

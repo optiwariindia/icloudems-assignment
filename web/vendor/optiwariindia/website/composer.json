@@ -1,0 +1,23 @@
+{
+    "name": "optiwariindia/website",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Om Tiwari",
+            "email": "optiwari.india@gmail.com"
+        }
+    ],
+    "scripts":{
+        "upload":"git add .; git commit -m $(date +%Y-%b-%d-%H:%M%Z); git push"
+    },
+    "require": {
+        "optiwariindia/database": "^1.2",
+        "optiwariindia/mail": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "optiwariindia\\website\\": "src/"
+        }
+    },
+    "license": "MIT"
+}

@@ -1,0 +1,12 @@
+{% macro input(params) %}
+	<div class="form-group">
+		<label for="{{ params.id ?? params.name}}">{{params.label}}</label>
+		<input type="text" name="{{params.name}}" id="{{params.id ?? params.name}}" class="form-control" {% if params.pattern is defined %} pattern="{{params.pattern}}" {% endif %} required>
+	</div>
+{% endmacro %}
+{% macro file(params) %}
+	<div class="form-group">
+		<label for="{{ params.id ?? params.name}}">{{params.label}}</label>
+		<input type="file" name="{{params.name}}" id="{{params.id ?? params.name}}" class="form-control" {% if params.accept is defined %} accept="{{params.accept}}" {% endif %} required>
+	</div>
+{% endmacro %}

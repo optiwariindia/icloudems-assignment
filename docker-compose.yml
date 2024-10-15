@@ -1,0 +1,27 @@
+services:
+  icloud-php:
+    image: optiwariindia/php:8.2-apache
+    container_name: icloud-php
+    volumes:
+      - ./web:/var/www
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - ./temp:/var/www/uploads
+    networks:
+      - publicweb
+      - icloud
+    restart: unless-stopped
+  icloud-db:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: icloud_test
+    container_name: icloud-db
+    restart: unless-stopped
+    networks:
+      - icloud
+    volumes:
+      - ./db:/var/lib/mysql
+networks:
+  icloud:
+  publicweb:
+    external: true

@@ -1,0 +1,40 @@
+{% import "macro/form.twig" as form %}
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">{{page.title}}</div>
+	</div>
+	<div class="card-body">
+		<div class="form-container">
+			<form action="/setup/db" onsubmit="validateAndSubmit(event)" method="post">
+				{{form.input({
+                        "label":"Database Server (Hostname)",
+                        "pattern":"^[a-zA-Z0-9\\.\\-]+$",
+                        "name":"host"
+                    })}}
+				{{
+                        form.input({
+                            "label":"Database user",
+                            "pattern":"^[a-zA-Z0-9_]+$",
+                            "name":"user"
+                        })
+                    }}
+				{{
+                        form.input({
+                            "label":"Database Password",
+                            "name":"pass"
+                        })
+                    }}
+				{{
+                        form.input({
+                            "label":"Database Name",
+                            "name":"name",
+                            "pattern":"^[a-zA-Z_]+$"
+                        })
+                    }}
+				<div class="flex-center">
+					<button type="button" onclick="validateAndSubmit(event)" class="btn btn-primary">Save and continue</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

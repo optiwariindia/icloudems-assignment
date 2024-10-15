@@ -1,0 +1,18 @@
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">{{page.title}}</div>
+	</div>
+	<div class="card-body">
+		<ul class="nolist">
+			{% for table in tables %}
+				<li tbl={{table.name}}>
+                    {{table.text}}<span class="status"></span>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="flex-center">
+			<a href="/csv/upload" class="btn btn-primary" btn-next hidden>Next</a>
+			<a href="/setup/schema" class="btn btn-success" btn-refresh hidden>Retry</a>
+		</div>
+	</div>
+</div>

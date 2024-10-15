@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include "comp/head.twig" %}
+	<body>
+		<main>
+			<div class="card" style="min-width:360px">
+				<div class="card-header">
+					<div class="card-title">{{page.title}}</div>
+				</div>
+				<div class="card-body">
+					<ul class="nolist">
+                    {% for item in tables %}
+                        {% if item != "temp" %}
+                        <li seed="{{item.name}}">
+                            {{item.name}}
+                            <span onclick='loaddata(this)' class="status {{(item.rows == 0)?"btn btn-primary btn-sm":""}}">
+								{% if item.rows == 0 %}
+								 Click to Load
+								{% else %}
+								{{item.rows}}
+								{% endif %}
+							</span>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+					<div class="flex-center">
+						<a href="/seed/fintxndetail" class="btn btn-primary">Load Financial Transactions</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		 <script src="/js/script.js"></script>
+	</body>
+</html>

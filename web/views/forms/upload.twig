@@ -1,0 +1,21 @@
+{% import "macro/form.twig" as form %}
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">{{page.title}}</div>
+	</div>
+	<div class="card-body">
+		<form onsubmit="validateAndSubmit(event)" action="/csv/upload" method="post" enctype="multipart/form-data">
+			{{
+                form.file({
+                    "label":"Upload File",
+                    "name":"datafile",
+                    "accept":"text/csv"
+                })
+            }}
+            <div id="progress" hidden>0%</div>
+			<div class="flex-end">
+				<button class="btn btn-primary" type="button" onclick="validateAndSubmit(event)">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>

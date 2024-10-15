@@ -1,0 +1,68 @@
+Setup:
+    ✔ Install docker environment for the project and publish on iclud.optiwari.duckdns.org @started(24-10-11 19:29) @done(24-10-11 19:36) @lasted(7m46s)
+    ✔ Setup Directory Structure for the project @started(24-10-11 19:37) @done(24-10-11 19:41) @lasted(4m43s)
+    ✔ Setup Index file, Include path and common setups for php classes @started(24-10-11 19:42) @done(24-10-11 19:48) @lasted(6m31s)
+    ✔ Setup SCM (GIT) for source code management @started(24-10-11 19:49) @done(24-10-11 19:53) @lasted(4m33s)
+    ✔ Prepare project specific tasklist @started(24-10-11 19:53) @done(24-10-11 20:15) @lasted(22m10s)
+Frontend:
+    DB Setup:
+        ✔ check for db.json (if not present, redirect to /setup/db) @started(24-10-11 20:42) @done(24-10-11 20:58) @lasted(16m33s)
+        ✔ Create form to take inputs for db.json (hostname,user,password and database) @started(24-10-11 21:33) @done(24-10-11 21:44) @lasted(11m3s)
+        ✔ Save Database Settings and verify if database can be connected (create api endpoint /setup/db:post return success if correct) @started(24-10-11 22:45) @done(24-10-11 22:30) @lasted(-14m59s)
+        ✔ Redirect user to /setup/schema @started(24-10-11 22:30) @done(24-10-11 22:39) @lasted(9m22s)
+        ✔ on create schema list all 11 tables @done(24-10-11 22:39)
+        ✔ make ajax request and update success status / failure if any with each of the tables @started(24-10-11 22:40) @done(24-10-11 23:11) @lasted(31m44s)
+        ✔ create api endpoints to create each of the table @started(24-10-11 23:11) @done(24-10-12 00:04) @lasted(53m33s)
+        ✔ Display reload button once schema is created successfully. @done(24-10-12 00:04)
+    Upload File Page:
+        ✔ Create File Uplaod Page @started(24-10-12 00:48) @done(24-10-12 02:08) @lasted(1h20m2s)
+        ✔ Upload file with ajax and display status of uplaod @done(24-10-12 02:08)
+        ✔ Check if file is UTF-8, if not change to UTF-8 @done(24-10-12 02:08)
+        ✔ Import data from csv file uplaoded @started(24-10-12 16:10) @done(24-10-12 16:16) @lasted(6m46s)
+        ✔ Once Imported display "show summary" for summary page @started(24-10-12 16:16) @done(24-10-12 16:38) @lasted(22m32s)
+    Summary Page:
+        ✔ Display summary of data uploaded @started(24-10-12 17:57) @done(24-10-12 18:47) @lasted(50m19s)
+        ✔ Add button to list avaialble tables @done(24-10-12 18:47)
+    Seed Tables:
+        Branches  [display number of rows] [view records button if import completed]:
+            ✔ Create Endpoint to fill the table @done(24-10-14 06:26)
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Fee Category [display number of rows] [view records button if import completed]:
+            ✔ Create Endpoint to fill the table @done(24-10-14 06:27)
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Fee Collection Types [display number of rows] [view records button if import completed]:
+            ⭘ Create Endpoint to fill the table @started(24-10-14 06:29)
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Fee Types [display number of rows] [view records button if import completed]:
+            ✔ Create Endpoint to fill the table @done(24-10-14 06:28)
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Entry Modes [display number of rows] [view records button if import completed]:
+            ✔ Create Endpoint to fill the table @done(24-10-14 06:27)
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Modules [display number of rows] [view records button if import completed]:
+            ✔ Create Endpoint to fill the table @done(24-10-14 06:27)
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Financial Transactions [display number of rows] [view records button if import completed]:
+            ☐ Create Endpoint to fill the table
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Financial Transaction Details [display number of rows] [view records button if import completed]:
+            ☐ Create Endpoint to fill the table
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Common Fee Collection [display number of rows] [view records button if import completed]:
+            ☐ Create Endpoint to fill the table
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+        Common Fee Collection Head Wise [display number of rows] [view records button if import completed]:
+            ☐ Create Endpoint to fill the table
+            ☐ Connect Endpoint to UI button and update number of records on success and red refresh button to retry
+            ☐ Add button to view table data
+    Table Viewer:
+        ☐ Display datatable with server side processing
